@@ -65,7 +65,7 @@ public class Water extends JFrame {
         button.addActionListener(e -> {
             Main home = new Main();
             home.setVisible(true);
-            home.setSize(500, 600);
+            home.setSize(600, 400);
             Water.this.dispose();
         });
 
@@ -89,6 +89,7 @@ public class Water extends JFrame {
             value1.setText(null);
             value2.setText(null);
             value3.setText(null);
+            tfMsg.setText("Enter value to only one field");
         });
 
 //      Exit Button
@@ -106,11 +107,11 @@ public class Water extends JFrame {
                 exitFrame.setBackground(new Color(22, 160, 133));
                 thx.setForeground(Color.WHITE);
                 thx.setFont(new Font("Verdana", Font.BOLD, 20));
-                dispose();
                 onExit.getContentPane().setBackground(new Color(22, 160, 133));
                 onExit.add(thx);
                 onExit.setSize(340,200);
                 onExit.setVisible(true);
+                dispose();
                 
             }
         });

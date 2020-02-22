@@ -9,14 +9,17 @@ public class Main extends JFrame implements ActionListener {
     private JLabel lb1;
     private JPanel p1, p2;
     private JButton length, temp, mass, water;
-    
-    String pics [] = {"build/classes/lengthC.png", "build/classes/temp.png","build/classes/weight.png", "build/classes/waterC.png"};
-    ImageIcon img [] = {new ImageIcon(pics[0]), new ImageIcon(pics[1]), new ImageIcon(pics[2]), new ImageIcon(pics[3])};
+    ImageIcon img [] = {
+        new ImageIcon(getClass().getClassLoader().getResource("lengthC.png")),
+        new ImageIcon(getClass().getClassLoader().getResource("temp.png")),
+        new ImageIcon(getClass().getClassLoader().getResource("weight.png")),
+        new ImageIcon(getClass().getClassLoader().getResource("waterC.png"))
+    };
 
     public Main() {
+        setTitle("Unit Calculator");
         lb1 = new JLabel("<html>Welcome to unit calculator!<br/> &nbsp &nbsp &nbsp Choose a Converter", JLabel.CENTER);
         lb1.setForeground(Color.WHITE);
-
         lb1.setFont(new Font("Verdana", Font.BOLD, 20));
         length = new JButton("LENGTH", img[0]);
         length.setPreferredSize(new Dimension(130, 100));
@@ -65,7 +68,6 @@ public class Main extends JFrame implements ActionListener {
     public static void main(String[] args) {
         Main obj = new Main();
         obj.setSize(600, 400);
-        obj.setTitle("Unit Calculator");
         obj.setVisible(true);
         obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
