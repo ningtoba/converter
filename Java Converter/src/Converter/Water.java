@@ -6,6 +6,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class Water extends JFrame {
     //  Edit TITLE accordingly
@@ -98,7 +100,18 @@ public class Water extends JFrame {
         button_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Water.this.dispose();
+                JFrame exitFrame = new JFrame();
+                JDialog onExit = new JDialog(exitFrame,"Exiting...");
+                JLabel thx = new JLabel("<html> &nbsp Thanks for using our app!");
+                exitFrame.setBackground(new Color(22, 160, 133));
+                thx.setForeground(Color.WHITE);
+                thx.setFont(new Font("Verdana", Font.BOLD, 20));
+                dispose();
+                onExit.getContentPane().setBackground(new Color(22, 160, 133));
+                onExit.add(thx);
+                onExit.setSize(340,200);
+                onExit.setVisible(true);
+                
             }
         });
         contentPane.add(button_1);

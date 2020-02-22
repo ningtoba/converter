@@ -17,6 +17,7 @@ public class Length extends JFrame {
     private JTextField tfMsg, value0, value1, value2, value3;
     private JLabel title = new JLabel(TITLE), result;
     private JPanel contentPane = new JPanel();
+//    Timer timer = new Timer(300, this.dispose());
 
     //  Constructor
     public Length() {
@@ -91,6 +92,7 @@ public class Length extends JFrame {
         });
 
 //      Exit Button
+//                Timer timer = new Timer(300, this.dispose());
         JButton button_1 = new JButton("Exit");
         button_1.setForeground(Color.WHITE);
         button_1.setFont(new Font("Verdana", Font.PLAIN, 20));
@@ -99,7 +101,17 @@ public class Length extends JFrame {
         button_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Length.this.dispose();
+                JFrame exitFrame = new JFrame();
+                JDialog onExit = new JDialog(exitFrame,"Exiting...");
+                JLabel thx = new JLabel("<html> &nbsp Thanks for using our app!");
+                exitFrame.setBackground(new Color(22, 160, 133));
+                thx.setForeground(Color.WHITE);
+                thx.setFont(new Font("Verdana", Font.BOLD, 20));
+                dispose();
+                onExit.getContentPane().setBackground(new Color(22, 160, 133));
+                onExit.add(thx);
+                onExit.setSize(340,200);
+                onExit.setVisible(true);
             }
         });
         contentPane.add(button_1);
