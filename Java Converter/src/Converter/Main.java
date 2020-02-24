@@ -57,6 +57,8 @@ public class Main extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
         add(p1, BorderLayout.NORTH);
         add(p2, BorderLayout.CENTER);
+        p2.setLayout(new GridLayout(2,2));
+        
 
         length.addActionListener(this);
         temp.addActionListener(this);
